@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "0aa3bf62-66b9-4cd8-b1b6-732b9b1fbde3",
+		"name": "Bookings",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/bookings/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/bookings/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"bookings",
+						"1"
+					]
+				},
+				"description": "Get bookings by customer Id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/bookings/newBooking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"customerId\": 1,\r\n            \"bookingId\": 103,\r\n            \"productName\": \"Body  and Shoulder massage\",\r\n            \"bookingDate\": \"28-02-2021\",\r\n            \"bookingStatus\": \"scheduled\",\r\n            \"bookingName\": \"Body massage\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/bookings/newBooking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"bookings",
+						"newBooking"
+					]
+				},
+				"description": "Post Request for adding new booking"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/bookings/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/bookings/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"bookings",
+						"1"
+					]
+				},
+				"description": "After post request new booking added successfully"
+			},
+			"response": []
+		}
+	]
+}

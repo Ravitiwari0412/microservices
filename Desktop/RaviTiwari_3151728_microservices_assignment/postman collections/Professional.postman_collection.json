@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "ba68b2da-e485-49ad-80e7-8ece4c0e4add",
+		"name": "Professional",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8082/professional/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/professional/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"professional",
+						"1"
+					]
+				},
+				"description": "Get Professional Details By proId"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/professional/Barber/Delhi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/professional/Barber/Delhi",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"professional",
+						"Barber",
+						"Delhi"
+					]
+				},
+				"description": "Getting professional by their work and customer area\r\nexample here barber- profession\r\nand Delhi- area"
+			},
+			"response": []
+		}
+	]
+}

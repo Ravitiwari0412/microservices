@@ -1,0 +1,60 @@
+version: "3"
+services:
+  api-gateway:
+    image: ravitiwari102/api-gateway-docker.jar
+    ports:
+      - "9999:9999"
+    depends_on:
+      - discovery-server
+ 
+  discovery-server:
+    image: ravitiwari102/discovery-server-docker.jar
+    ports:
+      - "5672:5672"
+	  
+  customer-service:
+    image: ravitiwari102/customer-service-docker.jar
+    ports:
+      - "8069:8069"
+    depends_on:
+      - discovery-server
+	  
+  product-service:
+    image: ravitiwari102/product-service-docker.jar
+    ports:
+      - "8085:8085"
+    depends_on:
+      - discovery-server
+	  
+  workorder-service:
+    image: ravitiwari102/workorders-service-docker.jar
+    ports:
+      - "8090:8090"
+    depends_on:
+      - discovery-server
+  
+  professional-service:
+    image: ravitiwari102/professional-service-docker.jar
+    ports:
+      - "8082:8082"
+    depends_on:
+      - discovery-server
+	  
+  admin-service:
+    image: ravitiwari102/admin-service-docker.jar
+    
+    depends_on:
+      - discovery-server
+	  - workorder-service
+	  - professional-service
+	  - customer-service
+	  - bookings-service
+	  
+  bookings-service:
+    image: ravitiwari102/bookings-service-docker.jar
+    ports:
+      - "8081:8081"
+    depends_on:
+      - discovery-server
+    
+

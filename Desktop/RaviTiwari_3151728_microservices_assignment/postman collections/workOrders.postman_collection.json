@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "4924de8f-8c43-4399-8c11-353a70f8de54",
+		"name": "workOrders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8090/workOrders/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/workOrders/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"workOrders",
+						"1"
+					]
+				},
+				"description": "Get request for getting work orders assigned to each professional by proId"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/workOrders/newWorkOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"proId\": 1,\r\n            \"workOrderId\": 105,\r\n            \"workDateTime\": \"28-02-2021\",\r\n            \"address\": \"Delhi - 110006\",\r\n            \"workOrderCategory\": \"ELECTRICIANS\",\r\n            \"workOrderStatus\": \"ACCEPTED\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/workOrders/newWorkOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"workOrders",
+						"newWorkOrder"
+					]
+				},
+				"description": "Post Request For assigning new workOrders to professionals"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/workOrders/accept/2/103",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/workOrders/accept/2/103",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"workOrders",
+						"accept",
+						"2",
+						"103"
+					]
+				},
+				"description": "For accepting work order for by proid : 2 and workorder id 103"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/workOrders/reject/1/102",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/workOrders/reject/1/102",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"workOrders",
+						"reject",
+						"1",
+						"102"
+					]
+				},
+				"description": "To reject a workorder with id 102 by pro id 1"
+			},
+			"response": []
+		}
+	]
+}
